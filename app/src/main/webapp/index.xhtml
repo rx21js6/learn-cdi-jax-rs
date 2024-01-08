@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:b="http://bootsfaces.net/ui"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<f:view>
+    <h:head>
+        <meta charset="utf-8" />
+        <title>learn-cdi-jax-rs</title>
+    </h:head>
+    <h:body>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="js/index.js">
+
+        </script>
+        <b:container>
+            <b:form id="indexForm">
+                <b:row>
+                    <h1>
+                        <h:outputText value="learn-cdi-jax-rs" />
+                    </h1>
+                    <b:column>
+                        <ul>
+                            <li><h:outputText value="Mojarra 2.3.9" /></li>
+                            <li><h:outputText value="Weld(Shaded) 3.1.9" /></li>
+                            <li><h:outputText value="Jersey 2.41" /></li>
+                        </ul>
+                    </b:column>
+                </b:row>
+                <h2>JSFで出力</h2>
+                <b:row>
+                    <b:column>
+                        <h:outputText value="#{learnCdiJaxRsIndexModel.getCounter()}" />
+                    </b:column>
+                    <b:column>
+                        <b:commandButton ajax="true" update="@form"
+                            actionListener="#{learnCdiJaxRsIndexController.reload()}">リロード</b:commandButton>
+                    </b:column>
+                </b:row>
+                <h2>JAX-RSで出力</h2>
+                <b:row>
+                    <b:column>
+                        <b:inputText id="messageInput" name="messageInput"
+                            placeholder="任意"></b:inputText>
+                    </b:column>
+                    <b:column>
+                        <b:button id="addMessageButton" look="info"
+                            name="addMessageButton"
+                            onclick="return onAddMessageButtonClick();" value="メッセージ" />
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:inputTextarea id="jsonResult" name="jsonResult" />
+                </b:row>
+            </b:form>
+        </b:container>
+    </h:body>
+</f:view>
+</html>
