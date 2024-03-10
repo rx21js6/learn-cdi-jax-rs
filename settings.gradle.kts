@@ -11,4 +11,4 @@ plugins {
 }
 
 rootProject.name = "learn-cdi-jax-rs"
-include("app")
+include("learn-cdi-jax-rs-app")
