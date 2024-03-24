@@ -27,7 +27,7 @@ public class LearnCdiJaxRsIndexWsEndpoint implements Serializable {
     @Inject
     private LearnCdiJaxRsIndexModel learnCdiJaxRsIndexModel;
 
-    @Path("/getMessge")
+    @Path("/getMessage")
     @GET
     public LearnCdiJaxRsIndexWsResponse getMessage() {
         if (this.learnCdiJaxRsIndexModel.getMessages().isEmpty()) {
